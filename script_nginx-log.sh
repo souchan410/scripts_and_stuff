@@ -1,9 +1,9 @@
 #!/bin/bash
 
-HOSTADDR=134.209.71.56                #print your remote host here
-SSHUSER=root                          #print here your ssh username
-privatekey=/home/linux/.ssh/id_oops   #path to your privatekey
-LOCALDIR=/home/linux                  #path to local directory
+HOSTADDR=                           #print your remote host here
+SSHUSER=                            #print here your ssh username
+privatekey=                         #path to your privatekey
+LOCALDIR=                           #path to local directory
 
 ssh $SSHUSER@$HOSTADDR -i $privatekey 'mkdir /usr/local/out_files'
 #extracting uniq IP's for last two hours from containerized NGINX access.log on remote host and write it to a file, then awk extracts unique IP's and write them to another file
