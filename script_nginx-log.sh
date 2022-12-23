@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #Setting up variables with user input
-read -p 'Your remote host adress: '     HOSTADDR                           #print your remote host here
-read -p 'Your remote username: '        SSHUSER                            #print here your ssh username
-read -p 'Your private shh-key file: '   privatekey=                         #path to your privatekey
+read -p 'Your remote host adress: '     HOSTADDR
+read -p 'Your remote username: '        SSHUSER
+read -p 'Your private shh-key file: '   privatekey
 
 ssh $SSHUSER@$HOSTADDR -i $privatekey 'mkdir /usr/local/out_files'
 #extracting uniq IP's for last two hours from containerized NGINX access.log on remote host and write it to a file, the>ssh $SSHUSER@$HOSTADDR -i $privatekey 'docker logs --since 2h $(docker ps | grep nginx | awk '\''{print $1}'\'') > /usr>ssh $SSHUSER@$HOSTADDR -i $privatekey 'awk '\''{print $1}'\'' /usr/local/out_files/logs-nginx.txt | sort | uniq -c > /u>
